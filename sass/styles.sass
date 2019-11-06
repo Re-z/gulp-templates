@@ -1,0 +1,21 @@
+
+@import 'not-compiling/reset'
+$tab: 1024
+$mob: 760
+
+
+=r($width)
+    @media screen and (max-width: $width + 'px')
+        @content
+
+// @keyframes slightAppear
+//     from
+//         opacity: 0
+//         transform: translateX(-20px)
+//     to
+//         opacity: 1
+//         transform: translateX(0)
+*
+    box-sizing: border-box
+    transition: .25s
+
