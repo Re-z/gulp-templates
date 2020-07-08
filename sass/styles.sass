@@ -1,21 +1,44 @@
-
-@import 'not-compiling/reset'
-$tab: 1024
-$mob: 760
-
+$desc: 1200
+$tab: 800
+$mob: 600
 
 =r($width)
     @media screen and (max-width: $width + 'px')
         @content
-
-// @keyframes slightAppear
-//     from
-//         opacity: 0
-//         transform: translateX(-20px)
-//     to
-//         opacity: 1
-//         transform: translateX(0)
 *
     box-sizing: border-box
     transition: .25s
+    &::selection
+        background: #ED145B
+        color: white
+html
+    scroll-behavior: smooth
 
+body
+    min-width: 375px
+a
+    text-decoration: none
+    color: inherit
+    transition: .25s
+img
+    display: block
+    max-width: 100%
+p
+    margin: 0
+    padding: 0
+mark
+    background: transparent
+button
+    background: transparent
+    border: none
+    outline: none
+    cursor: pointer
+    transition: .25s
+.inner
+    width: $desc
+    margin: 0 auto
+    padding: 0 20px
+    +r($desc)
+        width: 100%
+.is-hidden
+    display: none
