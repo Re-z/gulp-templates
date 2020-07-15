@@ -1,4 +1,4 @@
-$desc: 1200
+$desc: 1100
 $tab: 800
 $mob: 600
 
@@ -8,6 +8,8 @@ $mob: 600
 *
     box-sizing: border-box
     transition: .25s
+    margin: 0
+    padding: 0
     &::selection
         background: #ED145B
         color: white
@@ -23,9 +25,6 @@ a
 img
     display: block
     max-width: 100%
-p
-    margin: 0
-    padding: 0
 mark
     background: transparent
 button
@@ -35,10 +34,29 @@ button
     cursor: pointer
     transition: .25s
 .inner
-    width: $desc
+    width: 1100px
     margin: 0 auto
     padding: 0 20px
     +r($desc)
         width: 100%
 .is-hidden
     display: none
+
+.overlay
+	position: fixed
+	width: 100%
+	height: 100vh
+	left: 0
+	top: 0
+	right: 0
+	bottom: 0
+	background: rgba(0,0,0, .7)
+
+
+//generate svg icons with classes
+$svg-icons: [ 'mark' 20px 20px ]
+
+@each $name, $width, $height in $svg-icons
+    .icon-#{$name}
+        width: $width
+        height: $height
